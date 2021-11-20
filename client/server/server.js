@@ -14,11 +14,11 @@ const adminRoutes = require("./admin/admin_server");
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/api/innovations", innovationRoutes);
-app.use('/api/investment', investmentRoutes);
-//app.use('/api/user', userRoutes);
-app.use("/", innovatorRoutes);
-app.use("/", productRoutes);
+// app.use("/api/innovations", innovationRoutes);
+// app.use('/api/investment', investmentRoutes);
+// //app.use('/api/user', userRoutes);
+// app.use("/", innovatorRoutes);
+// app.use("/", productRoutes);
 
 app.use("/", adminRoutes);
 

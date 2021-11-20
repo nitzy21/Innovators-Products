@@ -131,11 +131,7 @@ export default function Layout() {
             </div>
           </div>
           <div className={classes.pagesDiv}>
-            <Badge badgeContent={4} color="primary" style={{ margin: 15 }}>
-              <IoMdNotificationsOutline
-                style={{ fontSize: 30, cursor: "pointer" }}
-              />
-            </Badge>
+            
             <hr style={{ height: 30 }} />
             <Typography
               variant="strong"

@@ -102,10 +102,6 @@ function ProductsOrder() {
   };
 
 
-  // Add Product 
-  const [showUpdate, setShowUpdate] = useState(false);
-  const handleCloseUpdate = () => setShowUpdate(false);
-  const handleShowUpdate = () => setShowUpdate(true);
 
 
   
@@ -113,70 +109,6 @@ function ProductsOrder() {
     return (
         <div>
 
-{/*Add Products*/}
-<Modal
-     
-      // show={show}
-      // onHide={handleClose1} 
-      animation={false}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      {/* <Modal show={show} onHide={handleClose1} animation={false}> */}
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Products & Orders</Modal.Title>
-        </Modal.Header>
-
-        <Modal.Body>
-          <h4>Add New Product</h4>
-          <form>
-            <div style={{ marginBottom: " 25%" }}>
-              <label>
-                Product Id:
-                <br />  <input type="text" name="name" />
-              </label>
-              <br />
-              <label>
-                Product Price:
-                <br />  <input type="text" name="name" />
-              </label>
-              <br />
-              <label>
-                Product Status:
-                <br />  <input type="text" name="name" />
-              </label>
-              <br />
-              <label>
-                Link:
-                <br />  <input type="text" name="name" />
-              </label>
-            </div>
-            <br />
-            <div style={{ marginLeft: "45%", marginTop: "-50%" }}>
-              <label>
-                Product Category:
-                <br />  <input type="text" name="name" />
-              </label>
-              <br />
-              <label>
-                Product Picture:
-                <br />  <input type="text" name="name" />
-              </label>
-              <br />
-              <label>
-                Exhibit Id:
-                <br />  <input type="text" name="name" />
-              </label>
-            </div>
-          </form>
-        </Modal.Body>
-
-        {/* <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose1}>Cancel</Button>
-          <Button variant="primary" >Add Product</Button>
-        </Modal.Footer> */}
-      </Modal>
 
 
             <Row>

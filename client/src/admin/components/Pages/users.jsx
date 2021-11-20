@@ -603,10 +603,8 @@ function Users() {
                     onClick: (event) => alert("You want to add a new row")
                   }
                 ]}
-                // data={userslist}
-                data={[
-                  { user_id: '101', user_fname: 'johno', user_lname: 'bob', user_email: 'johnobob@gmail.com', user_contact: '12345', user_address:'Tondo', dateCreated: '19/11/21' },
-                ]}
+                
+                data={userslist}
                 options={{
                   sorting: true,
                   search: true,

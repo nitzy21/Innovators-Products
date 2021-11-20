@@ -72,7 +72,7 @@ router.get("/api/getProducts", (req, res) => {
     if (err) throw err;
     // console.log("connected as id ${connection.threadId}");
 
-    connection.query("SELECT * FROM products WHERE product_isArchived = 'False'", (err, rows) => {
+    connection.query("SELECT * FROM products WHERE product_isArchived = false", (err, rows) => {
       connection.release();
 
       if (!err) {
@@ -85,6 +85,83 @@ router.get("/api/getProducts", (req, res) => {
   });
 });
 
+
+// Archived products
+router.get("/api/getProducts/archived", (req, res) => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    // console.log("connected as id ${connection.threadId}");
+
+    connection.query("SELECT * FROM products WHERE product_isArchived = true", (err, rows) => {
+      connection.release();
+
+      if (!err) {
+        // console.log(rows);
+        res.send(rows);
+      } else {
+        console.log(err);
+      }
+    });
+  });
+});
+
+
+// insert products
+router.post("/api/insertProducts/systemadmin", (req, res) => {
+  const imgFile = req.body.fileImage;
+  const category = req.body.category;
+  const price = req.body.price;
+
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    // console.log("connected as id ${connection.threadId}");
+
+    connection.query("INSERT INTO products (product_price,product_category,product_pictures) VALUES (?,?,?)",
+      [price, category, imgFile]
+      , (err, rows) => {
+        connection.release();
+
+        if (!err) {
+          console.log("Successfully Inserted");
+          // res.send(rows);
+        } else {
+          console.log(err);
+        }
+      });
+  });
+});
+
+
+// update products
+router.put("/api/updateProducts", (req, res) => {
+  const product_id = req.body.product_id;
+  const imgFile = req.body.fileImage;
+  const category = req.body.category;
+  const price = req.body.price;
+
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    // console.log("connected as id ${connection.threadId}");
+
+    connection.query("UPDATE products SET product_price = ? ,product_category = ? ,product_pictures = ? WHERE product_id = ?",
+      [price, category, imgFile, product_id]
+      , (err, rows) => {
+        connection.release();
+
+        if (!err) {
+          console.log("Successfully Updated");
+          // res.send(rows);
+        } else {
+          console.log(err);
+        }
+      });
+  });
+});
+
+
+
+
+
 //archived products
 router.put("/api/products/archived", (req, res) => {
   const product_id = req.body.product_id;
@@ -93,11 +170,12 @@ router.put("/api/products/archived", (req, res) => {
     if (err) throw err;
     console.log(`connected as id ${connection.threadId}`);
 
-    connection.query("UPDATE products SET product_isArchived	= 'True' WHERE product_id = ?", product_id, (err, result) => {
+    connection.query("UPDATE products SET product_isArchived	= true WHERE product_id = ?", product_id, (err, result) => {
       connection.release();
 
       if (!err) {
-        res.sendStatus(200).send(result);
+        console.log("Successfully Deleted");
+        res.send('Successfully Deleted');
       } else {
         console.log(err);
       }
@@ -116,7 +194,7 @@ router.get("/api/getOrders", (req, res) => {
       connection.release();
 
       if (!err) {
-        console.log(rows);
+        // console.log(rows);
         res.send(rows);
       } else {
         console.log(err);
@@ -136,7 +214,7 @@ router.get("/api/getSouvenirs", (req, res) => {
       connection.release();
 
       if (!err) {
-        console.log(rows);
+        // console.log(rows);
         res.send(rows);
       } else {
         console.log(err);
@@ -156,7 +234,7 @@ router.get("/api/getBook", (req, res) => {
       connection.release();
 
       if (!err) {
-        console.log(rows);
+        // console.log(rows);
         res.send(rows);
       } else {
         console.log(err);
@@ -177,7 +255,7 @@ router.get("/api/getInnovations", (req, res) => {
       connection.release();
 
       if (!err) {
-        console.log(rows);
+        // console.log(rows);
         res.send(rows);
       } else {
         console.log(err);
@@ -215,7 +293,7 @@ router.get("/api/getPayments", (req, res) => {
       connection.release();
 
       if (!err) {
-        console.log(rows);
+        // console.log(rows);
         res.send(rows);
       } else {
         console.log(err);
@@ -236,7 +314,7 @@ router.get("/api/getInvestment", (req, res) => {
       connection.release();
 
       if (!err) {
-        console.log(rows);
+        // console.log(rows);
         res.send(rows);
       } else {
         console.log(err);
@@ -256,7 +334,7 @@ router.get("/api/getExhibit", (req, res) => {
       connection.release();
 
       if (!err) {
-        console.log(rows);
+        // console.log(rows);
         res.send(rows);
       } else {
         console.log(err);
