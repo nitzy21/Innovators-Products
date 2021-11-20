@@ -1,4 +1,4 @@
-import React , {useState, useEffect}from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Form, Row ,Tab, Container, Image, Overlay, OverlayTrigger, Button, Modal} from "react-bootstrap";
 import SideNavBar from './SideNavBar';
 import MaterialTable from 'material-table';
@@ -55,7 +55,37 @@ function MyVerticallyCenteredModal(props) {
     );
   }
 
+  
+
+  
+
+
 function Exhibits() {
+
+  const [show, setShow] = useState(false);
+
+  const [show1, setShow1] = useState(false);
+
+  const [show2, setShow2] = useState(false);
+
+  const [show3, setShow3] = useState(false);
+
+  const [show4, setShow4] = useState(false);
+
+  const handleClose1 = () => setShow(false);
+  const handleShow1 = () => setShow(true);
+
+  const handleClose2 = () => setShow1(false);
+  const handleShow2 = () => setShow1(true);
+
+  const handleClose3 = () => setShow2(false);
+  const handleShow3 = () => setShow2(true);
+
+  const handleClose4 = () => setShow3(false);
+  const handleShow4 = () => setShow3(true);
+
+  const handleClose5 = () => setShow4(false);
+  const handleShow5 = () => setShow4(true);
 
     const StyledMenu = styled((props) => (
         <Menu
@@ -128,6 +158,218 @@ function Exhibits() {
    
     return (
         <div style={{marginTop:100}}>
+
+{/* Add Exhibit*/}
+<Modal
+      show={show}
+      onHide={handleClose1} 
+      animation={false}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">Exhibits</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <h4>Exhibit Details</h4>
+          <form>
+            <div style={{ marginBottom: " 25%" }}>
+              <label>
+                Exhibit Title:
+                <br />  <input type="text" name="name" />
+              </label>
+              <br />
+              <label>
+                Exhibit Description:
+                <br />  <input type="text" name="name" />
+              </label>
+              <br />
+              <label>
+                Product Description:
+                <br />  <input type="text" name="name" />
+              </label>
+              <br />
+              <label>
+                Product Description:
+                <br />  <input type="text" name="name" />
+              </label>
+            </div>
+            <br />
+            <div style={{ marginLeft: "45%", marginTop: "-57%" }}>
+              <label>
+                Product Description:
+                <br />  <input type="text" name="name" />
+              </label>
+              <br />
+              <label>
+                Product Description:
+                <br />  <input type="text" name="name" />
+              </label>
+              <br />
+              <label>
+                Term:
+                <br />  <input type="text" name="name" />
+              </label>
+              <br />
+              <label>
+                Year:
+                <br />  <input type="text" name="name" />
+              </label>
+            </div>
+          </form>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose1}>Cancel</Button>
+          <Button variant="primary" >Add Exhibit</Button>
+        </Modal.Footer>
+      </Modal>
+
+{/* View Archive*/}
+<Modal
+      show={show1}
+      onHide={handleClose2} 
+      animation={false}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">Exhibits</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <h4>View Archive</h4>
+          <form>
+            <div style={{ marginBottom: " 25%" }}>
+              
+            </div>
+          </form>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose2}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+
+{/* Edit Exhibit*/}
+<Modal
+      show={show2}
+      onHide={handleClose3} 
+      animation={false}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">Exhibits</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <h4>Exhibit Details</h4>
+          <form>
+            <div style={{ marginBottom: " 25%" }}>
+              <label>
+                Exhibit Title:
+                <br />  <input type="text" name="name" />
+              </label>
+              <br />
+              <label>
+                Exhibit Description:
+                <br />  <input type="text" name="name" />
+              </label>
+              <br />
+              <label>
+                Product Description:
+                <br />  <input type="text" name="name" />
+              </label>
+              <br />
+              <label>
+                Product Description:
+                <br />  <input type="text" name="name" />
+              </label>
+            </div>
+            <br />
+            <div style={{ marginLeft: "45%", marginTop: "-57%" }}>
+              <label>
+                Product Description:
+                <br />  <input type="text" name="name" />
+              </label>
+              <br />
+              <label>
+                Product Description:
+                <br />  <input type="text" name="name" />
+              </label>
+              <br />
+              <label>
+                Term:
+                <br />  <input type="text" name="name" />
+              </label>
+              <br />
+              <label>
+                Year:
+                <br />  <input type="text" name="name" />
+              </label>
+            </div>
+          </form>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose3}>Cancel</Button>
+          <Button variant="primary" onClick={handleClose3}>Save Changes</Button>
+        </Modal.Footer>
+      </Modal>
+
+      {/* Archive */}
+      <Modal
+      show={show3}
+      onHide={handleClose4} 
+      animation={false}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+        <Modal.Header closeButton>
+          <Modal.Title>Archive</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <h4>Are you sure you want to delete?</h4>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose4}>Yes</Button>
+          <Button variant="primary" onClick={handleClose4}>No</Button>
+        </Modal.Footer>
+      </Modal>
+
+       {/* Confirmation */}
+       {/* <Modal
+      show={show3}
+      onHide={handleClose5} 
+      animation={false}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+        <Modal.Header closeButton>
+          <Modal.Title>Attention</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <h4>Are you sure you want to Change?</h4>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose5}>Yes</Button>
+          <Button variant="primary" onClick={handleClose5}>No</Button>
+        </Modal.Footer>
+      </Modal> */}
+
+      
+
             <Row>
     <Col sm={2}>
         <SideNavBar active={'exhibits'} />
@@ -165,12 +407,14 @@ function Exhibits() {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose} disableRipple>
-          <EditIcon />
-         <strong> Edit </strong>
+        <div onClick={handleShow3}><EditIcon />
+          <strong> Edit </strong>
+        </div>
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          <FileCopyIcon style={{color:'red'}}/>
-         <strong style={{color:'red', marginTop:5}}>Archive</strong> 
+        <div onClick={handleShow4}><FileCopyIcon style={{ color: 'red' }} />
+          <strong style={{ color: 'red', marginTop: 5 }}>Archive</strong>
+        </div> 
         </MenuItem>
       </StyledMenu>
 
@@ -184,17 +428,21 @@ function Exhibits() {
           tooltip: 'Add Subscriber',
           isFreeAction: true,
           onClick: (event, rowData) => {
-            setModalShow(true);
+            handleShow1();
           }
         },
         {
             icon: ArchiveIcon,
             tooltip: 'View Archive',
             isFreeAction: true,
-            onClick: (event) => alert("You want to add a new row")
+            onClick: (event) => {
+              handleShow2();
+            }
           }
       ]}
-      data={exhibitlist}        
+      data={[
+        { exhibit_id: '101', exhibit_name: 'Nu Centie', exhibit_year: '2019', exhibit_term: '4', exhibit_date: '12345' },
+      ]}        
       options={{
         sorting: true
       }}
