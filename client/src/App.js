@@ -51,13 +51,13 @@ function App() {
   return (
     <Router>
       <Suspense fallback={<div />}>
-        <div>
+        {/* <div>
           <NavBar />
-        </div>
+        </div> */}
 
         <Switch>
-        {/* <Route path="/" component={MainAdmin} /> */}
-          <Route path="/" exact>
+        <Route path="/" component={MainAdmin} />
+          {/* <Route path="/" exact>
             <Redirect to="/products/innovations" />
           </Route>
           <Route path="/login" component={Login}/>
@@ -89,9 +89,9 @@ function App() {
           <Route path="/contactus" component={ContactUs} exact />
           <Route path="/privacy" component={PrivacyPolicy} exact />
           <Route path="/exhibit" component={MainExhibitPage} exact/>
-          <Route path="/exhibit/productdetail" component={ProductDetail} exact/>
+          <Route path="/exhibit/productdetail" component={ProductDetail} exact/> */}
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </Suspense>
     </Router>
   );
