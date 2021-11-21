@@ -31,7 +31,7 @@ function NavBar() {
                 {/* innovator href landing page */}
               </li>
               <li>
-                <a href="#!">exhibits</a>
+                <a href="/exhibit">exhibits</a>
                 {/* exhibits href landing page */}
               </li>
               <li>
@@ -83,7 +83,7 @@ function NavBar() {
         </div>
         <div>
           <img src={exhibits} alt="" />
-          <a href="#!">exhibits</a>
+          <a href="/exhibit">exhibits</a>
           {/* exhibits href landing page */}
         </div>
         <div>

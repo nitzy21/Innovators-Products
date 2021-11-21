@@ -45,6 +45,8 @@ const PrivacyPolicy = lazy(() => import("./PrivacyPolicy/PrivacyPolicy"));
 const Login = lazy(() => import("./Login/Login"));
 
 const MainAdmin = lazy(() => import("./admin/components/Main"));
+
+{/* EXHIBITS */ }
 const MainExhibitPage = lazy(() => import("./pages/Exhibit/pages/Main-Exhibit-Page/main-exhibit-page"));
 const ProductDetail = lazy(() => import("./pages/Exhibit/pages/Product-Details-Exhibit-Page/product-details-exhibit-page"));
 
@@ -57,7 +59,13 @@ function App() {
         </div> */}
 
         <Switch>
-        <Route path="/" component={MainAdmin} />
+        <Route path="/" component={MainAdmin} exact/>
+        
+        <Route path="/exhibit" component={MainExhibitPage} exact />  {/* Exhibit Main Page */ }
+        <Route path='/exhibit/:id' render={props => <ProductDetail {...props}/>} exact />   {/* View Exhibit Product Detail  Page */ }
+
+
+
           {/* <Route path="/" exact>
             <Redirect to="/products/innovations" />
           </Route>
