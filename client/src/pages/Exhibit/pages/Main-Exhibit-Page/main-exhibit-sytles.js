@@ -22,7 +22,6 @@ export const Banner = styled.div`
    background-position-y: center;
    align-items: center;
    justify-content: center;
-   margin-top: 70px;
 
    h1{
        color: #fff;

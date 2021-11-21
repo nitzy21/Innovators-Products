@@ -57,7 +57,7 @@ function App() {
         </div> */}
 
         <Switch>
-        <Route path="/" component={MainAdmin} />
+        <Route path="/" component={MainExhibitPage} />
           {/* <Route path="/" exact>
             <Redirect to="/products/innovations" />
           </Route>
@@ -90,9 +90,9 @@ function App() {
           <Route path="/contactus" component={ContactUs} exact />
           <Route path="/privacy" component={PrivacyPolicy} exact />
           <Route path="/exhibit" component={MainExhibitPage}/>
-          <Route path="/exhibit/productdetail" component={ProductDetailsExhibitPage}/>
-       
-        {/* <Footer /> */} </Switch>
+          <Route path="/exhibit/productdetail" component={ProductDetailsExhibitPage}/> */}
+          </Switch>
+         <Footer />
       </Suspense>
     </Router>
   );

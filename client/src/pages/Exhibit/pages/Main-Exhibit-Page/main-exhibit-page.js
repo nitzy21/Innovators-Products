@@ -14,10 +14,11 @@ import {
     Pagination
 } from './main-exhibit-sytles'
 import ExhibitCard from '../../components/ExhibitCard/exhibit-card'
+import NavBar from '../../../../NavbarFooter/NavBar'
 const MainExhibitPage = () => {
     return (
         <ExhibitContainer>
-            <Navbar/>
+            <NavBar/>
             <Banner>
                 <h1>Exhibit</h1>
             </Banner>
@@ -57,7 +58,7 @@ const MainExhibitPage = () => {
 
             </ItemsContainer>
             
-            <Footer/>
+            {/* <Footer/> */}
             
         
         </ExhibitContainer>
