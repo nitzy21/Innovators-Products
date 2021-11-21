@@ -92,7 +92,7 @@ function App() {
           <Route path="/exhibit" component={MainExhibitPage}/>
           <Route path="/exhibit/productdetail" component={ProductDetailsExhibitPage}/> */}
           </Switch>
-         <Footer />
+         {/* <Footer /> */}
       </Suspense>
     </Router>
   );
