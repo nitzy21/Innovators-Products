@@ -57,7 +57,7 @@ function App() {
         </div> */}
 
         <Switch>
-        <Route path="/" component={MainExhibitPage} />
+        <Route path="/" component={MainAdmin} />
           {/* <Route path="/" exact>
             <Redirect to="/products/innovations" />
           </Route>

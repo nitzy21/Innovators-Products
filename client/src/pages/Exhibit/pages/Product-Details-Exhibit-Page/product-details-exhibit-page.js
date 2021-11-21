@@ -17,6 +17,7 @@ import {
 } from './product-details-exhibit-sytles'
 
 import ProductDetailCard from '../../components/ProductDetailCard/product-detail-card'
+import NavBar from '../../../../NavbarFooter/NavBar'
 
 
 class ProductDetailsExhibitPage extends React.Component{
@@ -68,7 +69,7 @@ class ProductDetailsExhibitPage extends React.Component{
     return (
         
         <ProductDetailContainer>
-            <Navbar/>
+          <NavBar/>
             <Banner>
                 <h1>Exhibit</h1>
             </Banner>
@@ -133,7 +134,7 @@ class ProductDetailsExhibitPage extends React.Component{
            
             </ItemsContainer>
 
-            <Footer/>
+            {/* <Footer/> */}
             
         
         </ProductDetailContainer>
